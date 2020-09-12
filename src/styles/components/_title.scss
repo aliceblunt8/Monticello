@@ -1,0 +1,23 @@
+%title {
+  font-family: "GothamMedium", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+%title-line {
+  content: "";
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: -25px;
+  width: 80px;
+  height: 0.5px;
+  background-color: #fff;
+}
+ 
+@media screen and (max-width: 425px) {
+  %title {
+    font-size: 3rem;
+  }
+}

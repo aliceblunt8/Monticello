@@ -1,0 +1,80 @@
+.footer {
+  height: 300px;
+  background-image: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+  padding-top: 140px;
+
+  &__inner {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  &__info {
+    color: #fff;
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &__copy {
+    padding-top: 30px;
+  }
+
+  &__socials {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__socials-item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(255,255,255);
+    border-radius: 50%;
+    margin: 10px;
+    text-align: center;
+  }
+
+  &__socials-item:hover {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    height: auto;
+
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__socials {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    padding-top: 155px;
+
+    &__copy {
+      text-align: center;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    padding-top: 115px;
+  }
+}

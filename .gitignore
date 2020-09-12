@@ -11,3 +11,10 @@ node_modules
 # Generated files
 backstop_data
 dist
+.cache
+
+# #Fonts
+# *.otf
+# *.ttf
+# *.eot
+# *.woff

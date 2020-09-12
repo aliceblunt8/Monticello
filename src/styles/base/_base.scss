@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1;
+  color: $base-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 55%;
+  }
+
+  .project img {
+    max-width: initial;
+  }
+}

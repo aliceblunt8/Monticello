@@ -1,0 +1,182 @@
+.projects {
+
+  &__title {
+    @extend %title;
+    color: $base-color;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  &__title::before {
+    @extend %title-line;
+    background-color: $base-color;
+  }
+}
+
+.project {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+
+  &__info {
+    padding: 50px;
+    flex-basis: 60%;
+  }
+
+  &__name {
+    font-family: "GothamBold", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__name span {
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+
+  &__desc {
+    padding-top: 10px;
+    padding-right: 40px;
+    color: #4b5562;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+  }
+
+  &__btn {
+    @extend %button;
+    margin-top: 30px;
+  }
+
+  &__address {
+    padding-top: 35px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3rem;
+  }
+  
+  &__shadow {
+    width: 485px;
+    height: 370px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__shadow--blue {
+    background-color: #55b7ff;
+    left: -210px;
+    top: 0;
+  }
+
+  &__shadow--violet {
+    background-color: #7e5aff;
+    right: -210px;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .project {
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 30px;
+
+    &__project--reverse {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+
+    &__info {
+      padding: 0;
+      width: 75%;
+    }
+
+    &__info--reverse {
+      text-align: right;
+    }
+
+    &__photo {
+      align-self: flex-end;
+    }
+
+    &__photo--reverse {
+      align-self: flex-start;
+    }
+
+    &__name {
+      font-size: 3.6rem;
+    }
+
+    &__name span {
+      font-size: 2rem;
+    }
+
+    &__desc {
+      font-size: 1.5rem;
+      padding-right: 0;
+    }
+
+    &__img {
+      height: 320px;
+    }
+
+    &__shadow {
+      width: 430px;
+      height: 320px;
+    }
+
+    &__shadow--blue {
+      left: -10px;
+      top: 25px;
+    }
+
+    &__shadow--violet {
+      right: -50px;
+      top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .projects {
+    
+    &__title {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .projects {
+    &__title {
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+  }
+  
+  .project {
+    align-items: center;
+
+    &__photo {
+      padding-bottom: 20px;
+    }
+
+    &__info {
+      width: 90%;
+    }
+
+    &__name {
+      font-size: 3rem;
+    }
+
+    &__desc {
+      line-height: 2.5rem;
+    }
+  }
+}

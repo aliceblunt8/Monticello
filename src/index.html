@@ -3,11 +3,503 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <title>Monticello Website</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    >
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    >
+    <link rel="stylesheet" href="./styles/style.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon/favicon-16x16.png"
+    >
+    <link rel="manifest" href="../favicon/site.webmanifest">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- Sticky menu  -->
+    <nav class="main-nav">
+      <input
+        class="toggler"
+        type="checkbox"
+        id="toggle"
+      >
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <img
+        src="images/header-logo.svg"
+        alt=""
+        class="main-nav__logo"
+      >
+      <ul class="main-nav__list">
+        <li class="main-nav__item main-nav__item--active">
+          <a href="#projects" class="main-nav__link">About us</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#news" class="main-nav__link">News</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#gallery" class="main-nav__link">Projects</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#contact" class="main-nav__link">Contact</a>
+        </li>
+      </ul>
+      <!-- Socials -->
+      <ul class="main-nav__socials">
+        <!-- Facebook -->
+        <li class="main-nav__socials-item">
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon">
+              <use href="images/sprite.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <!-- Twitter -->
+        <li class="main-nav__socials-item">
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon">
+              <use href="images/sprite.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <!-- Linkedin -->
+        <li class="main-nav__socials-item">
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon">
+              <use href="images/sprite.svg#linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__slider">
+        <div class="header__inner">
+          <h1 class="header__title">Simple & modern</h1>
+          <p class="header__desc">We make the world's beautiful every day</p>
+        </div>
+      </div>
+      <div class="header__slider">
+        <div class="header__inner">
+          <h1 class="header__title">Design with Nature</h1>
+          <p class="header__desc">We take care of the world we live in</p>
+        </div>
+      </div>
+      <div class="header__slider">
+        <div class="header__inner">
+          <h1 class="header__title">Details make a difference</h1>
+          <p class="header__desc">Details form the language of a building</p>
+        </div>
+      </div>
+      <!-- <img src="images/scroll-arrow.svg" alt="" class="header__arrow"> -->
+    </header>
+    <!-- Projects -->
+    <main>
+      <section id="projects" class="projects section">
+        <div class="container">
+          <div class="projects__inner">
+            <h3 class="projects__title">What we do</h3>
+            <div class="project">
+              <div class="project__shadow project__shadow--blue"></div>
+              <div class="project__photo">
+                <img
+                  class="project__img"
+                  src="images/project-img1.svg"
+                  alt=""
+                >
+              </div>
+              <div class="project__info">
+                <h3 class="project__name">
+                  <span>One World</span>
+                  <br>Trade Center
+                </h3>
+                <p class="project__desc">
+                  Increasing prosperity in our lives can be
+                accomplished by having the right frame of mind. The truth is,
+                our thoughts are very powerful.
+                </p>
+                <button class="project__btn">More details</button>
+                <address class="project__address">New York City, United States - 1776 feet</address>
+              </div>
+            </div>
+            <div class="project project__project--reverse">
+              <div class="project__info project__info--reverse">
+                <h3 class="project__name">
+                  <span>International</span>
+                  <br>Commerce Centre
+                </h3>
+                <p class="project__desc">
+                  Successful businesses have many things in common,
+                today we’ll look at the big ‘R’ of recognition and how a digital advertising
+                network may help.
+                </p>
+                <button class="project__btn">More details</button>
+                <address class="project__address">Hong Kong - 1588 Feet</address>
+              </div>
+              <div class="project__photo project__photo--reverse">
+                <img
+                  class="project__img"
+                  src="images/project-img2.svg"
+                  alt=""
+                >
+              </div>
+              <div class="project__shadow project__shadow--violet"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- News -->
+      <section id="news" class="news section">
+        <div class="container">
+          <div class="news__inner">
+            <h1 class="news__title">Latest News</h1>
+            <div class="slider">
+              <div class="slider__block">
+                <img
+                  class="slider__img"
+                  src="images/news-img1.svg"
+                  alt=""
+                >
+                <div class="slider__content">
+                  <h3 class="slider__title">See The Unmatched Beauty Of The Great</h3>
+                  <p class="slider__text">
+                    Free directories: directories are perfect for customers that are... searching
+                  for
+                  </p>
+                  <div class="slider__byline">
+                    <img
+                      src="images/news-pic1.svg"
+                      alt=""
+                      class="slider__icon"
+                    >
+                    <address class="slider__author">Isaac Dunn
+                      <br>
+                      <time
+                        class="slider__pubdate"
+                        datetime="2017-02-09"
+                        title="February 9th, 2017"
+                      >
+                        09 Feb 2017
+                      </time>
+                    </address>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__block">
+                <img
+                  class="slider__img"
+                  src="images/news-img2.svg"
+                  alt=""
+                >
+                <div class="slider__content">
+                  <h3 class="slider__title">Effective Advertising Pointers</h3>
+                  <p class="slider__text">Having a home based business is a wonderful asset to your life...</p>
+                  <div class="slider__byline">
+                    <img
+                      src="images/news-pic2.svg"
+                      alt=""
+                      class="slider__icon"
+                    >
+                    <address class="slider__author">Dominic Freeman
+                      <br>
+                      <time
+                        class="slider__pubdate"
+                        datetime="2017-04-27"
+                        title="April 27th, 2017"
+                      >
+                        24 Apr 2017
+                      </time>
+                    </address>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__block">
+                <img
+                  class="slider__img"
+                  src="images/news-img3.svg"
+                  alt=""
+                >
+                <div class="slider__content">
+                  <h3 class="slider__title">Hypnotize Yourself Into The Ghost</h3>
+                  <p class="slider__text">There are many things that are important to catalog design....</p>
+                  <div class="slider__byline">
+                    <img
+                      src="images/news-pic3.svg"
+                      alt=""
+                      class="slider__icon"
+                    >
+                    <address class="slider__author">Alice Ward
+                      <br>
+                      <time
+                        class="slider__pubdate"
+                        datetime="2017-12-30"
+                        title="December 30th, 2017"
+                      >
+                        30 Dec 2017
+                      </time>
+                    </address>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__block">
+                <img
+                  class="slider__img"
+                  src="images/news-img1.svg"
+                  alt=""
+                >
+                <div class="slider__content">
+                  <h3 class="slider__title">See The Unmatched Beauty Of The Great</h3>
+                  <p class="slider__text">
+                    Free directories: directories are perfect for customers that are... searching
+                  for
+                  </p>
+                  <div class="slider__byline">
+                    <img
+                      src="images/news-pic1.svg"
+                      alt=""
+                      class="slider__icon"
+                    >
+                    <address class="slider__author">Isaac Dunn
+                      <br>
+                      <time
+                        class="slider__pubdate"
+                        datetime="2017-02-09"
+                        title="February 9th, 2017"
+                      >
+                        09 Feb 2017
+                      </time>
+                    </address>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__block">
+                <img
+                  class="slider__img"
+                  src="images/news-img2.svg"
+                  alt=""
+                >
+                <div class="slider__content">
+                  <h3 class="slider__title">Effective Advertising Pointers</h3>
+                  <p class="slider__text">Having a home based business is a wonderful asset to your life...</p>
+                  <div class="slider__byline">
+                    <img
+                      src="images/news-pic2.svg"
+                      alt=""
+                      class="slider__icon"
+                    >
+                    <address class="slider__author">Dominic Freeman
+                      <br>
+                      <time
+                        class="slider__pubdate"
+                        datetime="2017-04-27"
+                        title="April 27th, 2017"
+                      >
+                        24 Apr 2017
+                      </time>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Gallery -->
+      <section id="gallery" class="gallery section">
+        <div class="container">
+          <div class="gallery__inner">
+            <h1 class="gallery__title">gallery</h1>
+            <div class="gallery__container">
+              <div class="gallery__block gallery__block--big">
+                <img
+                  class="gallery__pic gallery__pic--big"
+                  src="images/gallery-img-big.svg"
+                  alt=""
+                >
+                <img
+                  src="images/360gallery.svg"
+                  alt=""
+                  class="gallery__icon"
+                >
+              </div>
+              <div class="gallery__block gallery__block--small">
+                <div class="gallery__grid">
+                  <div>
+                    <img
+                      src="images/gallery-img1.svg"
+                      alt=""
+                      class="gallery__pic"
+                    >
+                  </div>
+                  <div>
+                    <img
+                      src="images/gallery-img2.svg"
+                      alt=""
+                      class="gallery__pic"
+                    >
+                  </div>
+                </div>
+                <div class="gallery__grid">
+                  <div>
+                    <img
+                      src="images/gallery-img3.svg"
+                      alt=""
+                      class="gallery__pic"
+                    >
+                  </div>
+                  <div>
+                    <img
+                      src="images/gallery-img4.svg"
+                      alt=""
+                      class="gallery__pic"
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="gallery__btn">See more</button>
+          </div>
+        </div>
+      </section>
+      <!-- Сontact -->
+      <section id="contact" class="contact section">
+        <!-- apigoogle map -->
+        <div id="map"></div>
+        <div class="contacts">
+          <div class="contacts__inner">
+            <h1 class="contacts__title">Get in touch</h1>
+            <div class="contacts__block">
+              <div class="contacts__info">
+                <address class="contacts__address">
+                  91 Nolan Extensions Suite 670
+                  <br>
+                  <a href="tel:+001 356-868-2454">+001 356-868-2454</a>
+                  <br>
+                  <a href="mailto:gahuy93@gmail.com">gahuy93@gmail.com</a>
+                  <br>
+                  From 07:05AM to 19:30PM
+                  <br>
+                </address>
+              </div>
+              <form action="" class="contacts__form">
+                <div class="contacts__input-outer">
+                  <input
+                    class="contacts__input"
+                    type="text"
+                    placeholder="Full Name"
+                  >
+                  <br>
+                  <span class="focus-border"></span>
+                </div>
+                <div class="contacts__input-outer">
+                  <input
+                    class="contacts__input"
+                    type="email"
+                    placeholder="Email"
+                  >
+                  <span class="focus-border"></span>
+                </div>
+                <button class="contacts__btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <img
+            src="images/footer-logo.svg"
+            alt=""
+            class="footer__logo"
+          >
+          <p class="footer__copy">Copyrights &copy; 2017 Monticello Group | Made with &hearts; by Ga Huy</p>
+        </div>
+        <!-- Socials -->
+        <ul class="footer__socials">
+          <!-- Facebook -->
+          <li class="footer__socials-item">
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg class="icon">
+                <use href="images/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <!-- Twitter -->
+          <li class="footer__socials-item">
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg class="icon">
+                <use href="images/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <!-- Linkedin -->
+          <li class="footer__socials-item">
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg class="icon">
+                <use href="images/sprite.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZoTb3x5nzd_Zty-e367_AqNkV515PXlo&callback=initMap"
+      defer
+    >
+    </script>
   </body>
 </html>

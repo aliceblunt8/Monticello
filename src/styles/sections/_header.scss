@@ -1,0 +1,369 @@
+.header {
+  height: 100vh;
+  background: url(../images/header-bg.png) left top / cover no-repeat;
+  position: relative;
+  
+  &__inner {
+    color: #fff;
+    text-transform: uppercase;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  &__title {
+    font-family: "GothamMedium", sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding-top: 320px;
+  }
+
+  &__desc {
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 5.4px;
+    padding-top: 23px;
+    padding-bottom: 250px;
+  }
+
+  &__arrow {
+    padding-bottom: 50px;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 100%;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 70px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__item {
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-right: 90px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.8;
+  }
+
+  &__item::before {
+    content: "";
+    color: #fff;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    position: absolute;
+    left: -25px;
+    top: 1px;
+  }
+
+  &__item--active::before {
+    background-color: #fff;
+    opacity: 0.9;
+  }
+
+  &__item:hover {
+    opacity: 1;
+    font-weight: bold;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  &__socials {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__socials-item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(255,255,255);
+    border-radius: 50%;
+    margin: 10px;
+    text-align: center;
+  }
+
+  &__socials-item:hover {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.sticky {
+  background: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+  opacity: 0.9;
+}
+
+.mobile {
+  background: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+  opacity: 1;
+  height: 100vh;
+}
+
+.header .slick-dots {
+  display: flex;
+  flex-direction: column;
+  right: 60px;
+  top: 45%;
+  width: 0;
+}
+
+.header .slick-dots li {
+  margin: 10px;
+}
+
+.toggler {
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+/* Hamburger Line (middle one)*/
+.hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.hamburger > div::before,
+.hamburger > div::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 3px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.toggler:checked + .hamburger > div:before,
+.toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+//Responsive media quaries
+//For tablets (iPads)
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+  .header {
+    height: auto;
+  }
+}
+
+@media screen 
+  and (min-device-width: 1500px) 
+  and (max-device-width: 2560px) {
+  .header {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main-nav {
+    &__item {
+      padding-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .main-nav {
+    flex-direction: column;
+    text-align: center;
+
+    &__list {
+      display: none;
+      flex-direction: column;
+      padding-top: 15px;
+    }
+
+    &__item {
+      padding: 12px;
+    }
+
+    &__item::before {
+      display: none;
+    }
+
+    &__socials {
+      display: none;
+    }
+  }
+
+  .toggler:checked ~ .main-nav__list {
+    display: flex;
+  }
+
+  .hamburger {
+    opacity: 1;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .main-nav {
+    align-items: flex-start;
+
+    &__list {
+      align-self: center;
+    }
+  }
+
+  .header {
+    &__title {
+      padding-top: 280px;
+      font-size: 5rem;
+    }
+    &__desc {
+      padding-bottom: 200px;
+      letter-spacing: 2.5px;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main-nav {
+    padding: 25px 20px 10px;
+  }
+
+  .hamburger {
+    right: 50px;
+  }
+
+  .toggler {
+    right: 50px;
+  }
+
+  .header .slick-dots {
+    flex-direction: row;
+    right: 50%;
+    margin-right: 55px;
+    top: 90%;
+  }
+
+  .header {
+    &__title {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    &__inner {
+      width: 95%;
+    }
+
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__desc {
+      letter-spacing: 2px;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main-nav {
+    &__logo {
+      max-width: 65%;
+    }
+  }
+
+  .hamburger {
+    right: 25px;
+    top: 15px;
+  }
+
+  .toggler {
+    right: 25px;
+    top: 15px;
+  }
+}
+
+//For phones
+@media screen
+  and (min-device-width: 320px) 
+  and (max-device-width: 600px) {
+  .main-nav {
+    justify-content: start;
+  
+    &__list {
+      padding-top: 60px;
+    }
+
+    &__item {
+      padding: 35px;
+      font-size: 1.8rem;
+    }
+  }
+}

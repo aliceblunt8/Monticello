@@ -1,0 +1,98 @@
+.gallery {
+  text-align: center;
+   
+  &__title {
+    @extend %title;
+    text-align: center;
+    padding-top: 150px;
+  }
+
+  &__title::before {
+    @extend %title-line;
+    background-color: $base-color;
+  }
+
+  &__container {
+    display: flex;
+    padding-top: 70px;
+  }
+
+  &__block--big {
+    margin-right: 7px;
+    flex-basis: 50%;
+    position: relative;
+  }
+
+  &__block--small {
+    flex-basis: 50%;
+  }
+
+  &__grid {
+    display: flex;
+  }
+
+  &__grid:first-of-type {
+    margin-bottom: 5px;
+  }
+
+  &__grid div:first-child {
+    margin-right: 7px;
+  }
+
+  &__btn {
+    @extend %button;
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    top: 50%;
+    margin-top: -35px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .gallery {
+    
+    &__title {
+      padding-top: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery {
+
+    &__title {
+      padding-top: 80px;
+    }
+  
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__block--big {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gallery {
+
+    &__title {
+      padding-top: 50px;
+    }
+
+    &__container {
+      padding-top: 40px;
+    }
+  }
+}

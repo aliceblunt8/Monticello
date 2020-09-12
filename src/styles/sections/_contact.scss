@@ -1,0 +1,166 @@
+#map {
+  height: 600px;
+}
+
+.contact {
+  position: relative;
+}
+
+.contacts {
+  width: 650px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0 -4px 30px rgba(133, 133, 133, 0.2);
+  text-align: center;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__inner {
+    padding: 35px;
+  }
+  &__title {
+    @extend %title;
+    padding-top: 40px;
+  }
+
+  &__title::before {
+    @extend %title-line;
+    background-color: $base-color;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__info {
+    padding-top: 30px;
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 4.5rem;
+    text-align: justify;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__form {
+    position: relative;
+
+  }
+
+  &__input {
+    width: 200px;
+    border: none;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $base-color;
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+  }
+
+  &__input-outer {
+    position: relative;
+  }
+
+  &__input::placeholder {
+    color: #5e5e5e;
+    font-family: "GothamBook", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+  }
+
+  .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #39f;
+    transition: 0.3s;
+  }
+
+  &__input:hover,
+  &__input:active,
+  &__input:focus ~ .focus-border {
+    width: 200px;
+  }
+
+  &__btn {
+    @extend %button;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contacts {
+    top: 150px;
+    width: 500px;
+    height: auto;
+
+    &__block {
+      flex-direction: column;
+    }
+
+    &__info {
+      text-align: center;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    &__input {
+      padding-top: 20px;
+    }
+
+    &__btn {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contacts {
+    width: 350px;
+
+    &__input {
+      padding-top: 30px;
+    }
+
+    &__btn {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contacts {
+    width: 100%;
+
+    &__inner {
+      padding: 25px;
+    }
+  }
+}

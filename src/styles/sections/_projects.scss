@@ -1,5 +1,4 @@
 .projects {
-
   &__title {
     @extend %title;
     color: $base-color;
@@ -19,6 +18,13 @@
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
+  opacity: 0;
+  transition: all 0.8s linear;
+  transform: translateX(-50px);
+
+  &__project--reverse {
+    transform: translateX(50px);
+  }
 
   &__info {
     padding: 50px;
@@ -179,4 +185,9 @@
       line-height: 2.5rem;
     }
   }
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }

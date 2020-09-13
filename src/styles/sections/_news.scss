@@ -23,10 +23,10 @@
   display: flex;
 
   &__block {
-    // width: 380px;
     height: 400px;
     background-color: #fff;
     margin: 15px;
+    outline: none;
   }
 
   &__content {

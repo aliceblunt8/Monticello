@@ -8,26 +8,7 @@ const navList = document.querySelector('.main-nav__list');
 const navLinks = document.querySelectorAll('.main-nav__link');
 const toggler = document.querySelector('.toggler');
 
-function changeOnScroll() {
-  const distanceFromTop = this.scrollY + 100;
-
-  navLinks.forEach(link => {
-    const section = document.querySelector(link.hash);
-
-    if (section.offsetTop <= distanceFromTop
-      && section.offsetTop + section.offsetHeight > distanceFromTop) {
-      link.parentElement.classList.add('main-nav__item--active');
-    } else {
-      link.parentElement.classList.remove('main-nav__item--active');
-    }
-  });
-
-  if (this.scrollY >= 20) {
-    menu.classList.add('sticky');
-  } else {
-    menu.classList.remove('sticky');
-  }
-}
+addAnimationOnScroll();
 
 window.addEventListener('scroll', changeOnScroll);
 
@@ -95,6 +76,7 @@ $(document).ready(function() {
           slidesToScroll: 1,
           arrows: true,
           dots: true,
+          autoplay: true,
         },
       },
       {
@@ -104,6 +86,7 @@ $(document).ready(function() {
           slidesToScroll: 1,
           arrows: true,
           dots: true,
+          autoplay: true,
         },
       },
       {
@@ -310,4 +293,43 @@ function initMap() {
     position: mapMarker,
     map: map,
   });
+}
+
+// Add animation on scroll
+function addAnimationOnScroll() {
+  const callback = function(entries) {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('is-visible');
+    });
+  };
+
+  const observer = new IntersectionObserver(callback);
+
+  const targets = document.querySelectorAll('.show-on-scroll');
+
+  targets.forEach(function(target) {
+    observer.observe(target);
+  });
+}
+
+// Change styles of menu on scroll
+function changeOnScroll() {
+  const distanceFromTop = this.scrollY + 100;
+
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.hash);
+
+    if (section.offsetTop <= distanceFromTop
+      && section.offsetTop + section.offsetHeight > distanceFromTop) {
+      link.parentElement.classList.add('main-nav__item--active');
+    } else {
+      link.parentElement.classList.remove('main-nav__item--active');
+    }
+  });
+
+  if (this.scrollY >= 20) {
+    menu.classList.add('sticky');
+  } else {
+    menu.classList.remove('sticky');
+  }
 }

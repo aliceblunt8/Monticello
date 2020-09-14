@@ -14,8 +14,13 @@
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     >
-    <link rel="stylesheet" href="./styles/style.scss">
+    <link
+      rel="stylesheet"
+      media="all"
+      href="./styles/animate.css"
+    >
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.scss">
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -34,6 +39,205 @@
       href="../favicon/favicon-16x16.png"
     >
     <link rel="manifest" href="../favicon/site.webmanifest">
+    <script>
+    let map;
+
+      function initMap() {
+        const brooklyn = {
+          lat: 40.730, lng: -73.935,
+        };
+        const mapMarker = {
+          lat: 40.773, lng: -73.956,
+        };
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: brooklyn,
+          zoom: 12,
+          styles:
+                [
+                  {
+                    'featureType': 'all',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                      {
+                        'weight': '2.00',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'all',
+                    'elementType': 'geometry.stroke',
+                    'stylers': [
+                      {
+                        'color': '#9c9c9c',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'all',
+                    'elementType': 'labels.text',
+                    'stylers': [
+                      {
+                        'visibility': 'on',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'landscape',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'color': '#f2f2f2',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'landscape',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                      {
+                        'color': '#ffffff',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'landscape.man_made',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                      {
+                        'color': '#ffffff',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'poi',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'visibility': 'off',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'saturation': -100,
+                      },
+                      {
+                        'lightness': 45,
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                      {
+                        'color': '#eeeeee',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road',
+                    'elementType': 'labels.text.fill',
+                    'stylers': [
+                      {
+                        'color': '#7b7b7b',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road',
+                    'elementType': 'labels.text.stroke',
+                    'stylers': [
+                      {
+                        'color': '#ffffff',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road.highway',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'visibility': 'simplified',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'road.arterial',
+                    'elementType': 'labels.icon',
+                    'stylers': [
+                      {
+                        'visibility': 'off',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'transit',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'visibility': 'off',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'water',
+                    'elementType': 'all',
+                    'stylers': [
+                      {
+                        'color': '#46bcec',
+                      },
+                      {
+                        'visibility': 'on',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'water',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                      {
+                        'color': '#c8d7d4',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'water',
+                    'elementType': 'labels.text.fill',
+                    'stylers': [
+                      {
+                        'color': '#070707',
+                      },
+                    ],
+                  },
+                  {
+                    'featureType': 'water',
+                    'elementType': 'labels.text.stroke',
+                    'stylers': [
+                      {
+                        'color': '#ffffff',
+                      },
+                    ],
+                  },
+                ],
+        });
+
+        const marker = new google.maps.Marker({
+          position: mapMarker,
+          map: map,
+        });
+      }
+    </script>
+    <script src="./scripts/googleAPI.js"></script>
+    <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZoTb3x5nzd_Zty-e367_AqNkV515PXlo&callback=initMap">
+    </script>
   </head>
   <body>
     <!-- Sticky menu  -->
@@ -129,7 +333,7 @@
         <div class="container">
           <div class="projects__inner">
             <h3 class="projects__title">What we do</h3>
-            <div class="project show-on-scroll">
+            <div class="project wow fadeInUp"  data-wow-duration="1s">
               <div class="project__shadow project__shadow--blue"></div>
               <div class="project__photo">
                 <img
@@ -152,7 +356,7 @@
                 <address class="project__address">New York City, United States - 1776 feet</address>
               </div>
             </div>
-            <div class="project project__project--reverse show-on-scroll">
+            <div class="project project__project--reverse wow fadeInUp" data-wow-duration="1s">
               <div class="project__info project__info--reverse">
                 <h3 class="project__name">
                   <span>International</span>
@@ -483,14 +687,10 @@
         </ul>
       </div>
     </footer>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script src="./scripts/script.js"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZoTb3x5nzd_Zty-e367_AqNkV515PXlo&callback=initMap"
-      defer
-    >
-    </script>
   </body>
 </html>

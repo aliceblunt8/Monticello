@@ -41,6 +41,8 @@
     "projectType": "layout"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "animate.css": "^4.1.1",
+    "jquery": "^3.5.1",
+    "wow.js": "^1.2.2"
   }
 }

@@ -5,11 +5,7 @@
 // // Google API map
 let map;
 
-$(document).ready(function() {
-  initMap();
-});
-
-function initMap() {
+window.initMap = function() {
   const brooklyn = {
     lat: 40.730, lng: -73.935,
   };
@@ -197,4 +193,4 @@ function initMap() {
     position: mapMarker,
     map: map,
   });
-}
+};
